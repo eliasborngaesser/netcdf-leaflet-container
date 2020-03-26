@@ -3,3 +3,6 @@ Pipfile.lock
 .DS_Store
 __pycache__
 POC/**
+frontend
+inputFiles
+outputFiles
