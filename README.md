@@ -26,4 +26,4 @@
 
 ## Running Frontend
 - You may open the displayed index.html directly in your Browser or serve the app with nginx
-    - docker run -p 8081:80 -v $PWD:/usr/share/nginx/html -v conf:/etc/nginx -t nginx:latest
+    - docker run --rm -d -p 8081:80 --name nginx -v $PWD/frontend:/usr/share/nginx/html -v $PWD/nginx/conf:/etc/nginx/conf -t nginx:latest 
