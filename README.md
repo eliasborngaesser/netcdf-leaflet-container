@@ -1,6 +1,16 @@
 # Docker Image for uploading customized NetCDF Files to Geoserver
-## Prerequisites
-- running Docker daemon
+
+# Basic
+- run Docker daemon
+- get latest Docker Image: docker pull eliasborngaesser/netcdf-leaflet-container:latest
+- run geoserver: docker run -d -p 8600:8080 --name geoserver -e STABLE_EXTENSIONS=netcdf-plugin kartoza/geoserver:2.16.2
+- prepare env: prepare-env..sh | prepare-env.ps1
+- run netcdf-leaflet-container: docker run --rm --mount type=bind,source="$(pwd)/env",target=/work -t netcdf-leaflet-container:latest -c config.yml -i PathToNetCDF.nc -p ProjectName
+- run nginx: docker run --rm -d -p 8081:80 --name nginx -v $PWD/frontend:/usr/share/nginx/html -v $PWD/nginx-gitconf:/etc/nginx/conf -t nginx:latest 
+
+
+# Advanced
+
 ## Download this directory
 - mkdir env
 - curl -L https://github.com/eliasborngaesser/netcdf-leaflet-container/tarball/master | tar xz --strip=1  env
@@ -17,8 +27,7 @@
     - docker run -d -p 8600:8080 --name geoserver -e STABLE_EXTENSIONS=netcdf-plugin kartoza/geoserver:2.16.2
 
 ## Prepare Environment for creating Frontend dynamically
-- Run ShellScript to prepare Environment [prepare-env.sh]
-- copy netcdf File to input Folder
+- Download Frontend [dl-fronted.sh]
 - edit config file (Define at least the input .nc File name)
 
 ## Running Container
