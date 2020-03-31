@@ -2,7 +2,8 @@
 ## Prerequisites
 - running Docker daemon
 ## Download this directory
-- curl -L https://github.com/eliasborngaesser/netcdf-leaflet-container/tarball/develop | tar xz --strip=1   -C env
+- mkdir env
+- curl -L https://github.com/eliasborngaesser/netcdf-leaflet-container/tarball/master | tar xz --strip=1  env
 ## Build Docker Image
 - Build Image silently:
     - run [silent-build.sh] inside Directory with DockerFile
@@ -22,7 +23,7 @@
 
 ## Running Container
 - start docker container with mounting this directory and defining config file
-    - docker run -v $PWD:/work -t netcdf-leaflet-container:latest ./config.yml
+    - docker run --rm --mount type=bind,source="$(pwd)",target=/work -t netcdf-leaflet-container:latest -c ConfigFile.yml -i relativePathToNetCDF.nc -p ProjectName
 
 ## Running Frontend
 - You may open the displayed index.html directly in your Browser or serve the app with nginx
