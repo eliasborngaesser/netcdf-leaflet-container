@@ -5,7 +5,9 @@
 - ensure working dir is mountable by docker
 - get latest Docker Image: `docker pull eliasborngaesser/netcdf-leaflet-container:latest`
 - run geoserver: `docker run -d -p 8600:8080 --name geoserver -e STABLE_EXTENSIONS=netcdf-plugin kartoza/geoserver:2.16.2`
-- prepare env: [Shell](./prepare-env.sh/download) | [PowerShell](./prepare-env.ps1/download) and change directory to environment folder
+- Download Script to prepare environment: [Shell](https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/develop/prepare-env.sh) | [PowerShell](https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/develop/prepare-env.ps1)
+- run script
+- change directory to environment folder (netcdf-leaflet)
 - run netcdf-leaflet-container: `docker run --rm --mount type=bind,source="$(pwd)/env",target=/work -t netcdf-leaflet-container:latest -c config.yml -i PathToNetCDF.nc -p ProjectName`
 - run nginx: `docker run --rm -d -p 8081:80 --name nginx -v $PWD/frontend:/usr/share/nginx/html -v $PWD/nginx-gitconf:/etc/nginx/conf -t nginx:latest`
 
