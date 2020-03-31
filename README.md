@@ -8,8 +8,8 @@
 - Download Script to prepare environment: [Shell](https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/develop/prepare-env.sh) | [PowerShell](https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/develop/prepare-env.ps1)
 - run script
 - copy NetCDF File to env folder (netcdf-leaflet)
-- run netcdf-leaflet-container: `docker run --rm --mount type=bind,source="$(pwd)/netcdf-leaflet",target=/work -t netcdf-leaflet-container:latest -c config.yml -i ` **relativeFromEnvFolderToNetCDF.nc** ` -p ` **ProjectName**
-- run nginx: `docker run --rm -d -p 8081:80 --name nginx -v $PWD/frontend:/usr/share/nginx/html -v $PWD/nginx-gitconf:/etc/nginx/conf -t nginx:latest`
+- run netcdf-leaflet-container: `docker run --rm --mount type=bind,source="$(pwd)/netcdf-leaflet",target=/work -t netcdf-leaflet-container:latest -c netcdf-leaflet/config.yml -i ` **relativePathFromEnvFolderToNetCDF.nc** ` -p ` **ProjectName**
+- run nginx: `docker run --rm -d -p 8081:80 --name nginx -v $PWD/netcdf-leaflet/frontend:/usr/share/nginx/html -v $PWD/netcdf-leaflet/nginx-gitconf:/etc/nginx/conf -t nginx:latest`
 
 # Advanced
 
