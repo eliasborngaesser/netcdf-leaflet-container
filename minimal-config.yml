@@ -1,16 +1,16 @@
 general:
-    attributes_to_read:
+    attributes_to_read: #equal short names of netcdf-variables
         - TSurf
         - Albedo
         - WindSpd
         - T
         - LatentHeatFlux
     height_levels: [0.3,10.5,40.5]
+    removeOutputFiles: False
 geoserver:
     url: http://localhost:8600/geoserver
+    user: admin #password will be prompted in main.sh
     uploadTimeOut: 20 
-frontend:
-    projectHandling: True #If multiple Geoserver Instances are used the projectHandling does not work (If active Deletion of not found workspaces)
 styles: #To be defined in Hex Color Code
     DefaultColors: ["#0571b0","#92c5de","#f7f7f7","#f4a582","#ca0020"]
     customStyles:
