@@ -5,7 +5,7 @@
 - ensure working dir is mountable by docker
 - get latest Docker Image: `docker pull eliasborngaesser/netcdf-leaflet-container:latest`
 - run geoserver: `docker run -d -p 8600:8080 --name geoserver -e STABLE_EXTENSIONS=netcdf-plugin kartoza/geoserver:2.16.2`
-- Download Script to prepare environment: [Shell](https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/master/prepare-env.sh) | [PowerShell](https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/master/prepare-env.ps1)
+- Download Script to prepare environment: [Shell](https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/master/prepare-env.sh) | [CMD](https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/master/prepare-env.bat)
 - run script
 - copy NetCDF File(s) to "inputFiles" folder  in env Folder ("netcdf-leaflet")
 - run netcdf-leaflet-container: `docker run -it --rm --mount type=bind,source="$(pwd)/netcdf-leaflet",target=/work -t eliasborngaesser/netcdf-leaflet-container:latest -p testProject create`
