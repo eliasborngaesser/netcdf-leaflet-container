@@ -9,3 +9,4 @@ curl -L https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-contai
 curl -L https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/master/nginx/conf -o ".\%folder%\nginx-conf"
 mkdir "%folder%\inputFiles"
 echo Place your input .nc Files in this directory > "%folder%\inputFiles\README.txt"
+pause
