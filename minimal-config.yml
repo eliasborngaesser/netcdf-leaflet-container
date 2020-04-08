@@ -5,8 +5,8 @@ general:
         - WindSpd
         - T
         - LatentHeatFlux
-    height_levels: [0.3,10.5,40.5]
-    removeOutputFiles: False
+    height_levels: 8
+    removeOutputFiles: True
 geoserver:
     url: http://localhost:8600/geoserver
     user: admin #password will be prompted in main.sh
