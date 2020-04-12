@@ -11,6 +11,7 @@ rd /Q /S "%folder%-tmp"
 
 curl -L https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/master/minimal-config.yml -o "%folder%\config.yml"
 curl -L https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/master/nginx/conf -o "%folder%\nginx-conf"
+curl -L https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/master/netcdf.projections.properties -o "netcdf.projections.properties"
 mkdir "%folder%\inputFiles"
 echo Place your input .nc Files in this directory > "%folder%\inputFiles\README.txt"
 pause
