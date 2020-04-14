@@ -4,12 +4,13 @@
 - run Docker daemon
 - ensure working dir is mountable by docker
 - get latest Docker Image: `docker pull eliasborngaesser/netcdf-leaflet-container:latest`
-- run geoserver: `docker run -d -p 8600:8080 --name geoserver -e INITIAL_MEMORY=3G -e STABLE_EXTENSIONS=netcdf-plugin -v $(pwd)/netcdf.projections.properties:/opt/geoserver/data_dir/user_projections/netcdf.projections.properties kartoza/geoserver:2.16.2`
+- run geoserver: `docker run -d -p 8600:8080 --name geoserver -e INITIAL_MEMORY=2G -e STABLE_EXTENSIONS=netcdf-plugin -v $(pwd)/netcdf.projections.properties:/opt/geoserver/data_dir/user_projections/netcdf.projections.properties kartoza/geoserver:2.16.2`
 - Download Script to prepare environment: [Shell](https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/master/prepare-env.sh) | [CMD](https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/master/prepare-env.bat)
 - run script
 - copy NetCDF File(s) to "inputFiles" folder  in env Folder ("netcdf-leaflet")
 - run netcdf-leaflet-container: `docker run -it --rm --mount type=bind,source="$(pwd)/netcdf-leaflet",target=/work -t eliasborngaesser/netcdf-leaflet-container:latest -p testProject create`
 - run nginx: `docker run --rm -d -p 8081:80 --name nginx -v $(pwd)/netcdf-leaflet/frontend:/usr/share/nginx/html -v $PWD/netcdf-leaflet/nginx-conf:/etc/nginx/conf -t nginx:latest`
+ - Available at [open](http://localhost:8081/app/projects/YOURPROJECT/)
 
 # Advanced
 
@@ -39,3 +40,4 @@
 ## Running Frontend
 - You may open the displayed index.html directly in your Browser or serve the app with nginx
     - `docker run --rm -d -p 8081:80 --name nginx -v $(pwd)/netcdf-leaflet/frontend:/usr/share/nginx/html -v $PWD/netcdf-leaflet/nginx-conf:/etc/nginx/conf -t nginx:latest`
+    - Available at [open](http://localhost:8081/app/projects/YOURPROJECT/)
