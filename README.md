@@ -4,7 +4,7 @@
 - run Docker daemon
 - ensure working dir is mountable by docker
 - get latest Docker Image: `docker pull eliasborngaesser/netcdf-leaflet-container:latest`
-- run geoserver: `docker run -d -p 8600:8080 --name geoserver -e INITIAL_MEMORY=2G -e STABLE_EXTENSIONS=netcdf-plugin -v "$(pwd)/conf/geoserver/netcdf.projections.properties:/opt/geoserver/data_dir/user_projections/netcdf.projections.properties" -v "$(pwd)/conf/geoserver/content.ftl:/opt/geoserver/data_dir/templates/content.ftl" kartoza/geoserver:2.16.2`
+- run geoserver: `docker run -d -p 8600:8080 --name geoserver -e INITIAL_MEMORY=2G -e STABLE_EXTENSIONS=netcdf-plugin -v "$(pwd)/netcdf-leaflet/conf/geoserver/netcdf.projections.properties:/opt/geoserver/data_dir/user_projections/netcdf.projections.properties" -v "$(pwd)/netcdf-leaflet/conf/geoserver/content.ftl:/opt/geoserver/data_dir/templates/content.ftl" kartoza/geoserver:2.16.2`
 - Download Script to prepare environment: [Shell](https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/master/prepare-env.sh) | [CMD](https://raw.githubusercontent.com/eliasborngaesser/netcdf-leaflet-container/master/prepare-env.bat)
 - run script
 - copy NetCDF File(s) to "inputFiles" folder  in env Folder ("netcdf-leaflet")
