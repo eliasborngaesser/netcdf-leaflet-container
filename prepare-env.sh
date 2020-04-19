@@ -1,5 +1,5 @@
 folder=netcdf-leaflet
-branch=develop
+branch=master
 mkdir $folder $folder/inputFiles $folder/conf $folder/conf/geoserver $folder/conf/nginx
 echo "Place yout input .nc Files in this Folder" > $folder/inputFiles/README.txt
 ./utils/dl-frontend.sh $branch

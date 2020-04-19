@@ -1,5 +1,5 @@
 set folder=netcdf-leaflet
-set branch=develop
+set branch=master
 mkdir %folder% %folder%-tmp
 curl -L https://github.com/eliasborngaesser/netcdf-leaflet-frontend/tarball/%branch% -o %folder%-tmp\frontend.tar
 tar -xvf "%folder%-tmp\frontend.tar" -C "%folder%-tmp"
